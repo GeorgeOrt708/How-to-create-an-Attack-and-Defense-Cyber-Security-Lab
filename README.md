@@ -109,6 +109,33 @@ Finally, you will be prompted with a place to install Windows. Choose Drive 0 an
 
   ## Download Kali Linux Virtual Machine
 
+For the Kali Linux VM you will want to visit: https://www.kali.org/ and click Download
 
+![image](https://github.com/user-attachments/assets/c6c0ad9f-fc39-4660-9ce1-b8583c033d14)
 
-  
+Here you'll see multiple different options to download Kali. For now we will be choosing the Virtual Machine option as these provide pre-built images for VMWare and Virtualbox.
+
+![image](https://github.com/user-attachments/assets/73411058-8392-4e72-ab6a-4693a7a697b7)
+
+From here Select the VirutalBox Option and begin the download
+
+![image](https://github.com/user-attachments/assets/d26ef825-e023-472f-9d29-c82b540edadb)
+
+Due to this being a 7-Zip file you will need to install 7zip.
+
+To do so navigate to the following website: https://7-zip.org/
+
+Once here click the Download button that fits whatever version of Windows you have. In this case x64 or 64 bit
+
+![image](https://github.com/user-attachments/assets/e0c2af1b-3eb6-40da-bb6d-311851a800af)
+
+If your not sure what version you currently have simply go to the Windows Search button on the bottom left of your screen and type in "System Information"
+
+Here you will see all the information on your current machine including your "System type which tells you what version of Windows you have.
+
+![image](https://github.com/user-attachments/assets/240837f9-7a2d-4a36-996b-7ee2b4f9876e)
+
+Now with 7-Zip installed you can go to the Kali Linux file you downloaded and extract the file via 7-Zip
+
+![image](https://github.com/user-attachments/assets/bf7f7bdd-a80b-4751-92dc-fd80c7c714c3)
+
