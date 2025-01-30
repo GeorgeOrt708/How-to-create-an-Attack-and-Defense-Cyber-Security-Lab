@@ -139,3 +139,98 @@ Now with 7-Zip installed you can go to the Kali Linux file you downloaded and ex
 
 ![image](https://github.com/user-attachments/assets/bf7f7bdd-a80b-4751-92dc-fd80c7c714c3)
 
+Once the file is extracted you will need to enter the kali-linux virtual box folder.
+
+Here you will see two files. Double click the file with the .vbox extension and it will automatically be imported to the virtual box menu.
+
+![image](https://github.com/user-attachments/assets/b53294d8-0600-44f8-9362-07844784ba38)
+
+If you cannot see the .vbox extension then click view on the top of the file explorer options and select file name extensions.
+
+![image](https://github.com/user-attachments/assets/12182e7e-c1d2-4fc2-aee6-1b526bcba8fd)
+
+## Network Configuration
+
+### This is one of if not the MOST important step when it comes to malware analysis as improper network configuration can lead to you damaging or destroying your host machine and any others on the network.
+
+For this lab we will be using an internal network topology as this will not allow any external communications to our host or internet as shown below
+
+![image](https://github.com/user-attachments/assets/e42c6361-5575-4ea9-bf59-e8ac646a9ed6)
+
+More information on the different network types can be found in this document from VirtualBox: https://www.virtualbox.org/manual/ch06.html
+
+In order to set these VM's to internal network mode we will need to launch virtualbox, click either of the VM's, click settings and click network.
+
+Here we will see the option to change our network adapter and what it is attatched to. Select Internal Network and provide a name for the network. Repeat these steps for the second machine
+
+![image](https://github.com/user-attachments/assets/5c042b40-fff2-43ff-bb23-33066932569b)
+
+Due to the nature of an internal network we will need to statically (Manually) assign an IP address to each device so that they can communicate with each other.
+
+Launch the Windows machine first. In the bottom right corner you will need to right click the globe icon and select "Open Network and Tnternet Settings".
+
+![image](https://github.com/user-attachments/assets/14c6545c-49e0-45a6-9483-006755e20702)
+
+Scroll down until you see change adapter options. This will open a window called "Network Connections". There will be an option called Ethernet. Right click it and hit "Properties"
+
+![image](https://github.com/user-attachments/assets/97fd8cc7-8891-4144-abef-1f7f79650cbe)
+
+A list of connections will appear before you. Double click "Internet Protocol Version 4 (TCP/IPv4)"
+
+![image](https://github.com/user-attachments/assets/1f917cfa-d7b8-4fe4-8d55-3e77bdd938c1)
+
+By default it will be set to obtain an IP automatically, but we want to switch this to "Use the following IP address"
+
+The IP we will be using for the Windows machine is: 192.168.20.10
+
+The subnet mask will be 255.255.255.0 and we will not be using a DNS Server.
+
+Once finished it should look like this:
+
+![image](https://github.com/user-attachments/assets/3f418006-b987-4ddf-a310-5a313697491c)
+
+Once this is done hit "Ok" and close the window. To ensure we properly set up the new IP Address we can open a cmd prompt and type the cmd: ipconfig
+
+![image](https://github.com/user-attachments/assets/01f34dd1-0036-47ac-b423-7899e1ce2a00)
+
+Now that this is complete we want to do the same thing for the Kali machine
+
+Open your kali machine with the default credentials (kali, kali) and go to the ethernet port icon located in the top right of the page.
+
+Right click the icon and select "Edit Connections"
+
+![image](https://github.com/user-attachments/assets/5fb395bc-93e9-414e-9a65-b15d1233cda7)
+
+Click "Wired Connection 1" and then hit the gear icon on the bottom left
+
+![image](https://github.com/user-attachments/assets/b68dbfb2-a03c-4fca-898e-89f8349befcd)
+
+From here select IPv4 Settings and switch from automatic DHCP to Manual.
+
+After that we will click Add and Enter the following IP: 192.168.20.11 and for Netmask: 24.
+
+![image](https://github.com/user-attachments/assets/603741cb-5436-4c06-9d18-b0664385f6cd)
+
+Now hit Save and close the page.
+
+Now to test we will be doing the same as with the Windows Machine.
+
+Right click anywhere on the screen and hit "Open Terminal Here"
+
+The cmd for Linux is slightly different to check your IP: ifconfig
+
+![image](https://github.com/user-attachments/assets/341655c8-87cd-4a85-b2bd-e4258066bf6f)
+
+Now that these VM's have both their IP's set up we can test and see if they are able to communicate with each other by using the ping cmd.
+
+Ensure that both machines are currently online and type in the following cmd in your windows cmd terminal: ping 192.168.20.11
+
+![image](https://github.com/user-attachments/assets/d193884c-14d3-43f7-928b-7ad3503f6096)
+
+# Congratulations!
+
+You have successfully created an attack and defense lab that will allow you to test all kinds of different malware and anti malware techniques.
+
+This is only the beginning of your journey so make sure to keep learning and trying new things!
+
+Thanks for joining me!
