@@ -10,7 +10,6 @@ The primary objective of this cybersecurity attack and defense lab is to create 
 - Designing and configuring network topologies, including VLANs and subnets, for isolation and traffic control.
 - Configuring guest operating systems such as Windows Server, Linux distributions (Kali, Parrot OS, RHEL), and specialized security tools.
 - Understanding and implementing protocols such as TCP/IP, DHCP, DNS, and routing.
-- Using tools like Wireshark to monitor and analyze network traffic.
 
 ### Tools Used
 
